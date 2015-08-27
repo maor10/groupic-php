@@ -15,6 +15,15 @@ class Events extends CI_Controller {
          * @post object: {eventName, etc...}
          */
         public function joinEvent(){
-            
+            $barcode = $this->input->post("barcode");
+            $this->load->model(events_model);
+        }
+        public function createEvent(){
+            $obj = this->input->post("obj");
+            if ($obj == false) {
+            die($this->global_model->buildJSONString("Parameters missing", true));
+       }
+            $obj =json_decode($obj,true);
+            $this->events_model->createEvent($obj);
         }
 }

@@ -17,6 +17,9 @@ class events_model extends CI_Model {
         $result = $this->db->get()->result();
         return (count($result)!=0);
     }
+    public function createEvent($event){
+        $this->db->insert('events', $event);
+    }
 
     
 
