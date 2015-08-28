@@ -22,7 +22,7 @@ class Photos extends CI_Controller {
     }
 
     public function uploadPhoto() {
-        $photoURL = substr(md5(microtime()),rand(0,26),5);
+        $photoURL = substr(md5(microtime()),rand(0,26),8);
         
         
         $this->load->library('upload');

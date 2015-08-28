@@ -21,7 +21,7 @@ class photos_model extends CI_Model {
     }
     public function createNewImage($eventID, $image_url){
         $data = array('image_url' => $image_url, 'eventID' => $eventID);
-        $this->db->insert('image_url', $data);
+        $this->db->insert('events_photos', $data);
     }
 
     
