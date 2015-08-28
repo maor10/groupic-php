@@ -36,8 +36,8 @@ class Photos extends CI_Controller {
         $config['overwrite'] = true;
         $config['encrypt_name'] = false;
 
-        $this->load->library('upload', $config);
-$this->upload->initialize($config);
+        $this->load->library('upload');
+        $this->upload->initialize($config);
         if (!$this->upload->do_upload('userfile')) {
             echo $this->global_model->buildJSONString($this->upload->display_errors(), true);
         } else {
