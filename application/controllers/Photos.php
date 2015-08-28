@@ -29,7 +29,7 @@ class Photos extends CI_Controller {
         $config['file_ext_tolower'] = true;
         $config['file_name'] = $photoURL;
         $config['upload_path'] = './eventpics/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = '*';
         $config['max_size'] = 1024 * 8; //kb
         $config['max_width'] = 0; //px
         $config['max_height'] = 0; //px
