@@ -42,4 +42,8 @@ class Events extends CI_Controller {
             $event = $this->events_model->getEvent($id);
             echo $this->global_model->buildJSONString($event, false);
         }
+        public function getEvents(){
+        	$events = $this->events_model->getEvents();
+        	echo $this->global_model->buildJSONString($events, false);
+        }
 }
