@@ -52,3 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//REST API ROUTES
+
+//EVENTS
+$route['events']['post'] = "events/createEvent";
+$route['events/join']['post'] = "events/joinEvent";
+
+//PHOTO
+$route['photos']['get'] = "photos/getAllPhotosFromEvent";
+$route['photos']['post'] = "photos/uploadPhoto";
+

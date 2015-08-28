@@ -25,6 +25,9 @@ class Events extends CI_Controller {
             }
         }
         
+        /**
+         * obj - {name, barcode}
+         */
         public function createEvent(){
             $obj = $this->input->post("obj");
             if ($obj == false) {
@@ -32,5 +35,6 @@ class Events extends CI_Controller {
                 }
             $obj =json_decode($obj,true);
             $this->events_model->createEvent($obj);
+            echo $this->global_model->buildJSONString("", false);
         }
 }

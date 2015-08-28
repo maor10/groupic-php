@@ -40,8 +40,7 @@ class Photos extends CI_Controller {
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('userfile')) {
-            $error = array('error' => $this->upload->display_errors());
-            echo $this->global_model->buildJSONString($error, true);
+            echo $this->global_model->buildJSONString($this->upload->display_errors(), true);
         } else {
             $eventID = $this->input->post("EventID");
             $this->photos_model->createNewImage($eventID, $photoURL);

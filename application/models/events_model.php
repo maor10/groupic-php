@@ -13,7 +13,7 @@ class events_model extends CI_Model {
      * 
      */
     public function joinEvent($barcode) {
-        $this->db->select("*")->from("events")->where("password", $barcode);
+        $this->db->select("*")->from("events")->where("barcode", $barcode);
         $result = $this->db->get()->result();
         if(count($result) == 0){
             return null;
