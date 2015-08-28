@@ -24,7 +24,7 @@ class Events extends CI_Controller {
             }
         }
         public function createEvent(){
-            $obj = this->input->post("obj");
+            $obj = $this->input->post("obj");
             if ($obj == false) {
             die($this->global_model->buildJSONString("Parameters missing", true));
        }
