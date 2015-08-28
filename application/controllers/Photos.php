@@ -43,13 +43,18 @@ class Photos extends CI_Controller {
         } else {
             $eventID = $this->input->post("EventID");
             $fullRez = $photoURL;
+            
+            
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = './eventpics/'.$photoURL.'.jpg';
             $config['create_thumb'] = TRUE;
             $config['maintain_ratio'] = TRUE;
-            $config['width'] = 75;
-            $config['height'] = 75;
+            $config['width']         = 75;
+            $config['height']       = 50;
+
             $this->load->library('image_lib', $config);
             if(!$this->image_lib->resize()){
-                echo $this->global_model->buildJSONString($this->image_lib->display_errors(), false);
+                echo $this->global_model->buildJSONString($this->image_lib->display_errors(), true);
         }else{
             $thumbnail = $photoURL;
             $this->photos_model->createNewImage($eventID, $fullRez, $thumbnail);
