@@ -26,7 +26,6 @@ class Photos extends CI_Controller {
         $photoURL = substr(md5(microtime()),rand(0,26),8);
         
         
-        $this->load->library('upload');
         $config['file_ext_tolower'] = true;
         $config['file_name'] = $photoURL;
         $config['upload_path'] = './eventpics/';
