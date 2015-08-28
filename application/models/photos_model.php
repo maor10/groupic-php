@@ -15,12 +15,12 @@ class photos_model extends CI_Model {
      * @return : an array of objects each representing a picture ('Picture' field represents filename)
      */
     public function getEventPictures($eventID) {
-        $this->db->select("*")->from("events_photos")->where("EventID", $eventID);
+        $this->db->select("*")->from("events_photos")->where("event_id", $eventID);
         $result = $this->db->get()->result();
         return $result;
     }
     public function createNewImage($eventID, $image_url){
-        $data = array('image_url' => $image_url, 'eventID' => $eventID);
+        $data = array('image_url' => $image_url, 'event_id' => $eventID);
         $this->db->insert('events_photos', $data);
     }
 

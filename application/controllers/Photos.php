@@ -12,12 +12,13 @@ class Photos extends CI_Controller {
     }
 
     public function getAllPhotosFromEvent() {
-
-        $eventID = $this->input->get("EventID");
+        $eventID = $this->input->get("event_id");
+        $from = $this->input->get("from");
+        $to = $this->input->get("to");
         if ($eventID == false) {
             die($this->global_model->buildJSONString("Parameters missing", true));
         }
-        $eventPictures = $this->groups_model->getEventPictures($eventID);
+        $eventPictures = $this->photos_model->getEventPictures($eventID, $from, $to);
         echo $this->global_model->buildJSONString($eventPictures, false);
     }
 
@@ -40,9 +41,11 @@ class Photos extends CI_Controller {
 
         if (!$this->upload->do_upload('userfile')) {
             $error = array('error' => $this->upload->display_errors());
+            echo $this->global_model->buildJSONString($error, true);
         } else {
             $eventID = $this->input->post("EventID");
-            $this->photos_model->createNewImage($eventID, $photoURL );
+            $this->photos_model->createNewImage($eventID, $photoURL);
+            echo $this->global_model->buildJSONString($eventPictures, false);
         }
     }
 
