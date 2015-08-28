@@ -27,13 +27,13 @@ class Photos extends CI_Controller {
         
         
         // $config['file_ext_tolower'] = true;
-        // $config['file_name'] = $photoURL;
+         $config['file_name'] = $photoURL;
         $config['upload_path'] = './eventpics/';
         $config['allowed_types'] = '*';
         $config['max_size'] = 1024 * 8; //kb
         $config['max_width'] = 0; //px
         $config['max_height'] = 0; //px
-        // $config['overwrite'] = true;
+         $config['overwrite'] = true;
         // $config['encrypt_name'] = false;
 
         $this->load->library('upload');
@@ -48,10 +48,13 @@ class Photos extends CI_Controller {
             $config['width'] = 75;
             $config['height'] = 75;
             $this->load->library('image_lib', $config);
-            $this->image_lib->resize();
+            if(!$this->image_lib->resize()){
+                echo $this->global_model->buildJSONString($this->image_lib->display_errors(), false);
+        }else{
             $thumbnail = $photoURL;
-            $this->photos_model->createNewImage($fullRez, $thumbnail, $eventID);
+            $this->photos_model->createNewImage($eventID, $fullRez, $thumbnail);
             echo $this->global_model->buildJSONString($eventPictures, false);
+        }
         }
     }
 
