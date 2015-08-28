@@ -24,8 +24,6 @@ class Photos_model extends CI_Model {
         $this->db->insert('events_photos', $data);
     }
 
-    
-
 }
 
 ?>
