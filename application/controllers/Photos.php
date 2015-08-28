@@ -7,8 +7,8 @@ class Photos extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        $this->load->model("photos_model");
-        $this->load->model("global_model");
+        $this->load->model("Photos_model");
+        $this->load->model("Global_model");
     }
 
     public function getAllPhotosFromEvent() {
