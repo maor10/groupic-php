@@ -7,6 +7,7 @@ class Events_model extends CI_Model {
         parent::__construct();
     }
 
+
     
 
     /**
