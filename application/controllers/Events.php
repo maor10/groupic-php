@@ -17,7 +17,7 @@ class Events extends CI_Controller {
         public function joinEvent(){
            
             $barcode = $this->input->post("barcode");
-            $obj = $this->events_model->joinEvent($barcode);
+            $obj = $this->eventfffs_model->joinEvent($barcode);
             if($obj == null){
                 echo $this->global_model->buildJSONString("Barcode not found", true); 
             }else{
