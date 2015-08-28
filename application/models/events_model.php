@@ -1,6 +1,6 @@
 <?php
 
-class events_model extends CI_Model {
+class Events_model extends CI_Model {
 
     function __construct() {
         // Call the Model constructor

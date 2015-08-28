@@ -1,6 +1,6 @@
 <?php
 
-class global_model extends CI_Model {
+class Global_model extends CI_Model {
 
     function __construct() {
         // Call the Model constructor
