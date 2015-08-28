@@ -27,3 +27,5 @@ class Photos_model extends CI_Model {
     
 
 }
+
+?>

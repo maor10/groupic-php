@@ -34,6 +34,15 @@ class Events_model extends CI_Model {
             return $result[0];
         }
     }
+    public function getEvents(){
+        $this->db->select("*")->from("events");
+        $result = $this->db->get()->result();
+        if (count($result) == 0){
+            return null;
+        }else{
+            return $result[0];
+        }
+    }
 
     
 
