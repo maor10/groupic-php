@@ -32,8 +32,11 @@ class Events_model extends CI_Model {
             return $result[0];
         }
     }
-    public function getEvents(){
+    public function getEvents($uuid){
         $this->db->select("*")->from("events");
+        if($uuid != false){
+            $this->db->where("uuid", $uuid);
+        }
         $result = $this->db->get()->result();
         if (count($result) == 0){
             return null;
