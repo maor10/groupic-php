@@ -19,6 +19,7 @@ class Photos extends CI_Controller {
             die($this->global_model->buildJSONString("Parameters missing", true));
         }
         $eventPictures = $this->photos_model->getEventPictures($eventID, $from, $to);
+
         echo $this->global_model->buildJSONString($eventPictures, false);
     }
 

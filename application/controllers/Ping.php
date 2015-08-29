@@ -9,7 +9,6 @@ class Ping extends CI_Controller {
     }
 
     public function index() {
-        $this->load->helper('url');
         echo "pong </br> groupic version 0.1 </br> Made solely by Maor </br> Base URL: " . base_url();
     }
 
