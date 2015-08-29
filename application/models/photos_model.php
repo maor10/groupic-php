@@ -20,6 +20,7 @@ class Photos_model extends CI_Model {
             $this->db->limit($from, $to);
         }
         $result = $this->db->get()->result();
+        echo $this->db->last_query();
         return $result;
     }
     public function createNewImage($eventID, $image_url, $thumbnail_url){
