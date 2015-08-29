@@ -61,6 +61,7 @@ class Photos extends CI_Controller {
             $this->photos_model->createNewImage($eventID, $fullRez, $thumbnail);
             echo $this->global_model->buildJSONString("", false);
         }
+        
         }
     }
 

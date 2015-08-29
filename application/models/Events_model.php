@@ -10,12 +10,13 @@ class Events_model extends CI_Model {
     /**
      * 
      */
-    public function joinEvent($barcode) {
+    public function joinEvent($barcode, $uuid) {
         $this->db->select("*")->from("events")->where("barcode", $barcode);
         $result = $this->db->get()->result();
         if(count($result) == 0){
             return null;
         }else{
+            $this->db->insert("events_users", array("event_id" => $result[0]->event_id, "uuid"=>$uuid));
             return $result[0];
         }
     }
