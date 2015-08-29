@@ -20,7 +20,7 @@ class Photos_model extends CI_Model {
         return $result;
     }
     public function createNewImage($eventID, $image_url, $thumbnail_url){
-        $data = array('image_url' => base_url() . "eventpics/" .$image_url.".jpg", 'event_id' => $eventID, 'thumbnail_url' => base_url() . "/eventpics/" .$thumbnail_url);
+        $data = array('image_url' => base_url() . "eventpics/" .$image_url.".jpg", 'event_id' => $eventID, 'thumbnail_url' => base_url() . "eventpics/" .$thumbnail_url.".jpg");
         $this->db->insert('events_photos', $data);
     }
 
