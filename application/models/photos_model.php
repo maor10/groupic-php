@@ -19,6 +19,8 @@ class Photos_model extends CI_Model {
         if ($from != FALSE){
             $from-=1;
             $this->db->limit($from, $to);
+        }else{
+            echo "FROM IS FALSE! ". $from;
         }
         $result = $this->db->get()->result();
         echo $this->db->last_query();
