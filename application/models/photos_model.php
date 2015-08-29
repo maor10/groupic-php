@@ -16,7 +16,8 @@ class Photos_model extends CI_Model {
      */
     public function getEventPictures($eventID,$from,$to) {
         $this->db->select("*")->from("events_photos")->where("event_id", $eventID)->order_by("timestamp", "desc");
-        if ($from){
+        if ($from != FALSE){
+            $from-=1;
             $this->db->limit($from, $to);
         }
         $result = $this->db->get()->result();
