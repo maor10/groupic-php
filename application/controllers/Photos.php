@@ -57,8 +57,8 @@ class Photos extends CI_Controller {
             if(!$this->image_lib->resize()){
                 echo $this->global_model->buildJSONString($this->image_lib->display_errors(), true);
         }else{
-            $thumbnail = $photoURL;
-            $this->photos_model->createNewImage($eventID, $fullRez, $thumbnail);
+            $thumbnail = $photoURL . "_thumb";
+            $this->photos_model->createNewImage($eventID, $fullRez, $thumbnFail);
             echo $this->global_model->buildJSONString("", false);
         }
         }
