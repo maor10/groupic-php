@@ -15,11 +15,11 @@ class Photos_model extends CI_Model {
      * @return : an array of objects each representing a picture ('Picture' field represents filename)
      */
     public function getEventPictures($eventID,$from,$to) {
-        $this->db->select("*")->from("events_photos")->where("event_id", $eventID);
+        $this->db->select("*")->from("events_photos")->where("event_id", $eventID)->limit(0,10);
         if ($from != FALSE){
             $from-=1;
             echo "got here//";
-            $this->db->limit($from, $to);
+            //$this->db->limit($from, $to);
         }else{
             echo "FROM IS FALSE! ". $from;
         }
