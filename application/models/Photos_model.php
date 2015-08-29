@@ -24,7 +24,7 @@ class Photos_model extends CI_Model {
             echo "FROM IS FALSE! ". $from;
         }
         $this->db->order_by("timestamp", "desc");
-        $result = $this->db->get($from, $to)->result();
+        $result = $this->db->get()->result();
         echo $this->db->last_query();
         return $result;
     }
