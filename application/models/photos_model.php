@@ -14,8 +14,11 @@ class Photos_model extends CI_Model {
      * @param eid : the event's ID
      * @return : an array of objects each representing a picture ('Picture' field represents filename)
      */
-    public function getEventPictures($eventID) {
-        $this->db->select("*")->from("events_photos")->where("event_id", $eventID)->order_by("timestamp", "desc"); ;
+    public function getEventPictures($eventID,$from,$to) {
+        $this->db->select("*")->from("events_photos")->where("event_id", $eventID)->order_by("timestamp", "desc");
+        if ($from){
+            $this->db->limit($from, $to);
+        }
         $result = $this->db->get()->result();
         return $result;
     }
