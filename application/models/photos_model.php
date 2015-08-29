@@ -18,6 +18,7 @@ class Photos_model extends CI_Model {
         $this->db->select("*")->from("events_photos")->where("event_id", $eventID);
         if ($from != FALSE){
             $from-=1;
+            echo "got here//";
             $this->db->limit($from, $to);
         }else{
             echo "FROM IS FALSE! ". $from;
