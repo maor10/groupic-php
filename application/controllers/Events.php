@@ -19,7 +19,7 @@ class Events extends CI_Controller {
         $barcode = $this->input->post("barcode");
         $uuid = $this->input->post("uuid");
         if ($barcode == false) {
-            echo $this->global_model->buildJSONString("Parameters missing (barcode)", true);
+            die( $this->global_model->buildJSONString("Parameters missing", true));
         } 
         $obj = $this->events_model->joinEvent($barcode, $uuid);
         if ($obj == null) {
