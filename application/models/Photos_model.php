@@ -15,16 +15,9 @@ class Photos_model extends CI_Model {
      * @return : an array of objects each representing a picture ('Picture' field represents filename)
      */
     public function getEventPictures($eventID,$from,$to) {
-        $this->db->select("*")->from("events_photos")->where("event_id", $eventID)->order_by("timestamp", "desc")->limit("0","10");
-        if ($from != FALSE){
-            $from-=1;
-            echo "got here//";
-            //$this->db->limit($from, $to);
-        }else{
-            echo "FROM IS FALSE! ". $from;
-        }
-        $result = $this->db->get()->result();
-        echo $this->db->last_query();
+        //$this->db->select("*")->from("events_photos")->where("event_id", $eventID)->order_by("timestamp", "desc");
+        $query = $this->db->query("SELECT * FROM events_photos WHERE event_id=".$eventID." order by timestamp desc limit 10,0");
+        $result = $query->result();
         return $result;
     }
     public function createNewImage($eventID, $image_url, $thumbnail_url){
