@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //EVENTS
 $route['events']['post'] = "events/createEvent";
+$route['events']['get'] = "events/getEvents";
 $route['events/join']['post'] = "events/joinEvent";
 
 //PHOTO
