@@ -7,9 +7,6 @@ class Events_model extends CI_Model {
         parent::__construct();
     }
 
-    /**
-     * 
-     */
     public function joinEvent($barcode, $uuid) {
         $this->db->select("*")->from("events")->where("barcode", $barcode);
         $result = $this->db->get()->result();
@@ -48,3 +45,5 @@ class Events_model extends CI_Model {
     
 
 }
+
+?>

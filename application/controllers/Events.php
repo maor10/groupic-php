@@ -11,6 +11,10 @@ class Events extends CI_Controller {
         $this->load->model("global_model");
     }
 
+    public function index() {
+        $this->load->view("events_view");
+    }
+
     /**
      * @post object: {eventName, etc...}
      */
@@ -54,3 +58,5 @@ class Events extends CI_Controller {
     }
 
 }
+
+?>

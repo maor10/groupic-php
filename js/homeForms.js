@@ -1,4 +1,20 @@
  $(document).ready(function () {
+    $("#home").click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 800);
+        $(".carousel").carousel(0);
+    });
+    $("#about").click(function() {
+        $("html, body").animate({
+            scrollTop: $(".AboutUs").offset().top - 48
+        }, 800);
+    });
+    $("#contact").click(function() {
+        $("html, body").animate({
+            scrollTop: $(".ContactUs").offset().top - 48
+        }, 800);
+    });
     $('.forgot-pass').click(function(event) {
         $(".pr-wrap").toggleClass("show-pass-reset");
     });
@@ -67,7 +83,7 @@
                             $(".password").focus();
                         }else{
                             alert("logged in");
-                            window.location.href = "../events";
+                            window.location.href = "../events/index";
                         }
                     }     
                 });
@@ -81,7 +97,6 @@
         var username1 = $(".regUsername").val();
         var password1 = $(".regPassword").val();
         var repassword1 = $(".regRepassword").val();
-        var yesNo = true;
         var email1 = $(".regEmail").val();
         if ($.trim(firstname1) <= 0) {
             $(".regFirstname").attr("title", "Please fill in your firstname!");
@@ -138,10 +153,10 @@
         }else{
             var gender1 = "female";
         }
-        if (!$(".terms").is(":checked")) {
-            $(".terms").tooltip("show");
-            return false;
-        }
+        // if (!$(".terms").is(":checked")) {
+        //     $(".terms").tooltip("show");
+        //     return false;
+        // }
         $.post("applyToIlluminati", {
             firstname: firstname1,
             lastname: lastname1,
@@ -179,6 +194,33 @@
             }
         });
         return false;
+    });
+    $('.carousel').carousel({
+        interval: false
+    });
+    $("#SignUp").click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 800);
+        if(!$(window).scrollTop()) {
+            $(".carousel").carousel(1);
+        }else{
+            setTimeout(function() {
+                $(".carousel").carousel(1);
+            }, 800);
+        }
+    });
+    $("#SignIn").click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 800);
+        if(!$(window).scrollTop()) {
+            $(".carousel").carousel(2);
+        }else{
+            setTimeout(function() {
+                $(".carousel").carousel(2);
+            }, 800);
+        }
     });
 });
 

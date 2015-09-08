@@ -1,251 +1,142 @@
-body
-{
-    background: url('../img/bg.jpg') fixed;
-    background-size: cover;
+body{
     padding: 0;
     margin: 0;
 }
 
-.logo{
-	padding-top: 50px;
-
-}
-
-.wrap
-{
+.nav{
+    position: fixed;
+    background-color: white;
     width: 100%;
-    height: 100%;
-    min-height: 100%;
-    position: absolute;
     top: 0;
-    left: 0;
-    z-index: 99;
-        background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    border-bottom: 1px solid #dbdbdb;
 }
 
-p.form-title
-{
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 5%;
+.nav a {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
     text-transform: uppercase;
-    letter-spacing: 4px;
 }
 
-form
-{
-    width: 250px;
-    margin: 0 auto;
-    text-align: center;
+.nav ul{
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
 }
 
-form.login input[type="text"], form.login input[type="password"]
-{
-    width: 100%;
-    margin: 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid #FFFFFF;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #FFFFFF;
-    outline: 0;
+.nav li {
+    display: inline;
 }
 
-form.register input[type="text"], form.register input[type="password"]
-{
-    width: 100%;
-    margin: 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid #FFFFFF;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #FFFFFF;
-    outline: 0;
+.carousel{
+    border-bottom: 1px solid #dbdbdb;
 }
 
-form.register input[type="submit"]
-{
-    width: 100%;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 16px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
+.landing{
+    background-image: url('../img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    margin-top: 48px;
+    margin-bottom: 0px;
 }
 
-form.login input[type="submit"]
-{
-    width: 100%;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 16px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
+.jumbotron{
+    background-color: transparent;
 }
 
-form.login input[type="submit"]:hover
-{
-    transition: background-color 0.5s ease;
-}
-
-form.login .remember-forgot
-{
-    float: left;
-    width: 100%;
-    margin: 10px 0 0 0;
-}
-form.login .forgot-pass-content
-{
-    min-height: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-form.login label, form.login a
-{
-    font-size: 12px;
-    font-weight: 400;
-    color: #FFFFFF;
-}
-
-.hide{
-	display: none;
-}
-
-form.login a
-{
-    transition: color 0.5s ease;
-}
-
-form.login a:hover
-{
-    color: #2ecc71;
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #FFF;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #FFF;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #FFF;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #FFF;
-}
-
-.pr-wrap
-{
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: none;
-}
-
-
-.register
-{
-    display: none;
-}
-
-
-
-.show-pass-reset
-{
-    display: block !important;
-}
-
-.pass-reset
-{
-    margin: 0 auto;
-    width: 250px;
+.jumbotron .container{
     position: relative;
-    margin-top: 28%;
-    z-index: 999;
-    background: #FFFFFF;
-    padding: 20px 15px;
-}
-.registerBtn
-{
-text-align: center;
-position: relative;
+    top: 50px;
 }
 
+.jumbotron h1{
+    color: #fff;
+    font-size: 62px;
+    font-weight: bold;
+    text-shadow: 2px 5px 5px #333;
+}
 
-.pass-reset label
-{
-    font-size: 12px;
-    font-weight: 400;
+.jumbotron p{
+    font-size: 20px;
+    color: #000;
+}
+
+.AboutUs{
+    background-color: #efefef;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.AboutUs h2{
+    font-size: 24px;
+    color: #393c3d;
+}
+
+.AboutUs p{
+    font-size: 15px;
     margin-bottom: 15px;
 }
 
-.pass-reset input[type="email"]
-{
-    width: 100%;
-    margin: 5px 0 0 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid #000000;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #000000;
-    outline: 0;
+.AboutUs .thumbnail{
+    border: none;
+    background-color: transparent;
 }
 
-.pass-reset input[type="submit"]
-{
-    width: 100%;
-    border: 0;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 10px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
+.events{
+    border-bottom: 1px solid #dbdbdb;
 }
 
-.pass-reset input[type="submit"]:hover
-{
-    transition: background-color 0.5s ease;
+.ContactUs{
+    padding-top: 48px;
+    background-color: #efefef;
+    border-bottom: 1px solid #dbdbdb;
 }
-.posted-by
-{
-    position: absolute;
-    bottom: 26px;
-    margin: 0 auto;
-    color: #FFF;
-    background-color: rgba(0, 0, 0, 0.66);
+
+.ContactUs .form{
+    border-radius: 2px;
+
+}
+
+.info .header{
+    background-color: #F5F5F5;
     padding: 10px;
-    left: 45%;
+    font-size: 28px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.ContactUs .header{
+    color: #36A0FF;
+    font-size: 28px;
+    padding: 10px;
+}
+
+.SignUp{
+    height: 500px;
+    margin-top: 48px;
+    margin-bottom: 0px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #dbdbdb;
+}
+
+.SignIn{
+    height: 500px;
+    margin-top: 48px;
+    margin-bottom: 0px;
+    background-color: #fcfcfc;
+}
+
+.footer{
+    padding: 10px;
+    background-color: #fff;
+    font-size: 13px;
 }

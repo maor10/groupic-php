@@ -11,7 +11,9 @@ class Members extends CI_Controller {
     }
 
 	public function index(){
-		$this->load->model("members_model");
+        // idk why this is here |
+        //                      v
+		// $this->load->model("members_model");
 		$this->load->view("members_view");
 	}
     
@@ -54,7 +56,7 @@ class Members extends CI_Controller {
         }else{
             session_start();
             $_SESSION['user'] = $check;
-            echo $_SESSION['user']['firstname']." wants to fuck maor";
+            echo $_SESSION['user']['firstname'] . " wants to fuck maor";
         }
     }
 }
